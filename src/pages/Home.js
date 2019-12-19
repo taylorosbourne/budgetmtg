@@ -20,6 +20,7 @@ const SearchContainer = styled.section`
   background: #fff;
   width: 100%;
   height: 500px;
+  min-height: 500px;
   margin: 0px auto 35px;
   h2 {
     max-width: 100%;
@@ -28,7 +29,7 @@ const SearchContainer = styled.section`
     border-bottom: 8px solid rgb(242, 242, 242);
     font-weight: 200;
     text-transform: uppercase;
-    @media(max-width: 700px) {
+    @media (max-width: 700px) {
       font-size: 1.25rem;
     }
   }
@@ -47,7 +48,7 @@ const BottomCardsContainer = styled.div`
     border-bottom: 8px solid rgb(242, 242, 242);
     font-weight: 200;
     text-transform: uppercase;
-    @media(max-width: 700px) {
+    @media (max-width: 700px) {
       font-size: 1.25rem;
     }
   }
@@ -70,11 +71,18 @@ const RecentCards = styled.section`
     border-bottom: 8px solid rgb(242, 242, 242);
     font-weight: 200;
     text-transform: uppercase;
-    @media(max-width: 700px) {
+    @media (max-width: 700px) {
       font-size: 1.25rem;
     }
   }
   @media (max-width: 955px) {
+    width: 100%;
+  }
+`;
+
+const FormContainer = styled.div`
+  width: 50%;
+  @media(max-width: 1000px) {
     width: 100%;
   }
 `;
@@ -89,6 +97,15 @@ const SignUpContainer = styled.section`
   }
 `;
 
+const CardsContainer = styled.div`
+  width: 45%;
+  height: 100%;
+  position: relative;
+  @media(max-width: 1015px) {
+    display: none;
+  }
+`;
+
 const CardsContentContainer = styled.div`
   width: 94%;
   height: 80%;
@@ -96,7 +113,7 @@ const CardsContentContainer = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  @media(max-width: 1000px){
+  @media (max-width: 1000px) {
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
@@ -127,7 +144,7 @@ const ExpensiveCard = styled.img`
 const ExpensiveCardPrice = styled.span`
   display: inline-block;
   position: absolute;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   padding: 10px 20px;
   color: tomato;
   opacity: 0;
@@ -139,7 +156,7 @@ const CheapCardPrice = styled.span`
   position: absolute;
   right: 35px;
   top: 25px;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0, 0, 0, 0.8);
   padding: 10px 20px;
   color: #00cc7b;
   opacity: 0;
@@ -148,51 +165,61 @@ const CheapCardPrice = styled.span`
 
 const CheapCard = styled.img`
   height: 90%;
-  width: auto; 
+  width: auto;
   position: absolute;
   top: 35px;
   right: 100px;
   border-radius: 15px;
-   transition: 0.3s ease;
+  transition: 0.3s ease;
   :hover {
     transform: translateX(15px);
   }
 `;
 
 const Home = () => {
-  console.log(window.innerWidth)
-return (
-  <>
-    <SearchContainer>
-      <h2>
-        <span style={{ color: `#00CC7B` }}>search</span> budget alternates
-      </h2>
+  console.log(window.innerWidth);
+  return (
+    <>
+      <SearchContainer>
+        <h2>
+          <span style={{ color: `#00CC7B` }}>search</span> budget alternates
+        </h2>
         <CardsContentContainer>
-          <form style={window.innerWidth < `1000` ? {} : {width: `50%`}}>
-          {/* <label for="cardName">Search Card</label> */}
-          <StyledFormInput type="text" style={{fontSize: `2.5rem`, fontStyle: `italic`, width: `100%`, margin: `15px 0`}} placeholder="cyclonic rift..." />
-           <button
-            style={{
-              marginBottom: `25px`,
-              fontSize: `1.5rem`,
-              background: `transparent`,
-              color: `#00CC7B`,
-              padding: `10px 20px`,
-              border: `1px solid #00CC7B`,
-              cursor: `pointer`
-            }}
-          >
-            Search
-          </button>
-          </form>
-          <div 
-            style={{
-              width: `45%`, 
-              height: `100%`, 
-              position: `relative`,
-              // background: `tomato`
-            }}
-          >
+          <FormContainer>
+            <form>
+              {/* <label for="cardName">Search Card</label> */}
+              <StyledFormInput
+                type="text"
+                style={{
+                  fontSize: `2.5rem`,
+                  fontStyle: `italic`,
+                  width: `100%`,
+                  margin: `15px 0`
+                }}
+                placeholder="cyclonic rift..."
+              />
+              <button
+                style={{
+                  marginBottom: `25px`,
+                  fontSize: `1.5rem`,
+                  background: `transparent`,
+                  color: `#00CC7B`,
+                  padding: `10px 20px`,
+                  border: `1px solid #00CC7B`,
+                  cursor: `pointer`
+                }}
+              >
+                Search
+              </button>
+            </form>
+            <p style={{lineHeight: `1.5`, fontSize: `1.25rem`}}>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat.
+            </p>
+          </FormContainer>
+          <CardsContainer>
             <CardPriceContainer>
               <ExpensiveCard src={TimeSpiral} alt="expensive-card" />
               <ExpensiveCardPrice>YIKES &#36;63</ExpensiveCardPrice>
@@ -201,55 +228,55 @@ return (
               <CheapCard src={TimeReversal} alt="cheap-card" />
               <CheapCardPrice>NICE &#36;3</CheapCardPrice>
             </CardPriceContainer>
-          </div>
+          </CardsContainer>
         </CardsContentContainer>
-    </SearchContainer>
-    <BottomCardsContainer>
-      <RecentCards>
-        <h2>
-          Recent <span style={{ color: `#00CC7B` }}>budget</span> alternates
-        </h2>
-      </RecentCards>
-      <SignUpContainer>
-        <h2>
-          <span style={{ color: `#00CC7B` }}>Sign up</span> to contribute
-        </h2>
-        <form style={{ padding: `22px` }}>
-          <label for="email">Email</label>
-          <StyledFormInput name="email" type="email" />
-          <label for="confirmEmail">Confirm Email</label>
-          <StyledFormInput name="confirmEmail" type="email" />
-          <label for="password">Password</label>
-          <StyledFormInput name="password" type="password" />
-          <label for="confirmPassword">Confirm Password</label>
-          <StyledFormInput name="confirmPassword" type="password" />
-          <button
-            style={{
-              marginBottom: `25px`,
-              fontSize: `1.5rem`,
-              background: `#00CC7B`,
-              color: `#fff`,
-              padding: `10px 20px`,
-              border: 0,
-              cursor: `pointer`
-            }}
-          >
-            Sign Up
-          </button>
-          <a
-            style={{
-              textDecoration: `none`,
-              color: `#00CC7B`,
-              display: `block`,
-              cursor: `pointer`
-            }}
-          >
-            Already have an account? Log in
-          </a>
-        </form>
-      </SignUpContainer>
-    </BottomCardsContainer>
-  </>
-);
-}
+      </SearchContainer>
+      <BottomCardsContainer>
+        <RecentCards>
+          <h2>
+            Recent <span style={{ color: `#00CC7B` }}>budget</span> alternates
+          </h2>
+        </RecentCards>
+        <SignUpContainer>
+          <h2>
+            <span style={{ color: `#00CC7B` }}>Sign up</span> to contribute
+          </h2>
+          <form style={{ padding: `22px` }}>
+            <label for="email">Email</label>
+            <StyledFormInput name="email" type="email" />
+            <label for="confirmEmail">Confirm Email</label>
+            <StyledFormInput name="confirmEmail" type="email" />
+            <label for="password">Password</label>
+            <StyledFormInput name="password" type="password" />
+            <label for="confirmPassword">Confirm Password</label>
+            <StyledFormInput name="confirmPassword" type="password" />
+            <button
+              style={{
+                marginBottom: `25px`,
+                fontSize: `1.5rem`,
+                background: `#00CC7B`,
+                color: `#fff`,
+                padding: `10px 20px`,
+                border: 0,
+                cursor: `pointer`
+              }}
+            >
+              Sign Up
+            </button>
+            <a
+              style={{
+                textDecoration: `none`,
+                color: `#00CC7B`,
+                display: `block`,
+                cursor: `pointer`
+              }}
+            >
+              Already have an account? Log in
+            </a>
+          </form>
+        </SignUpContainer>
+      </BottomCardsContainer>
+    </>
+  );
+};
 export default Home;
