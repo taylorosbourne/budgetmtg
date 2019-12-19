@@ -61,8 +61,8 @@ const BottomCardsContainer = styled.div`
 `;
 
 const RecentCards = styled.section`
-  width: 48.5%;
-  height: 600px;
+  width: 38%;
+  height: 550px;
   background: #fff;
   h2 {
     max-width: 100%;
@@ -73,6 +73,28 @@ const RecentCards = styled.section`
     text-transform: uppercase;
     @media (max-width: 700px) {
       font-size: 1.25rem;
+    }
+  }
+  ul {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    li {
+      width: 90%;
+      height: 60px;
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 5px auto;
+      border-bottom: 1px solid rgb(242,242,242);
+      a {
+        font-size: 1.25rem;
+      }
+      span {
+        font-size: 1.25rem;
+        color: #00cc7b;
+      }
     }
   }
   @media (max-width: 955px) {
@@ -88,7 +110,7 @@ const FormContainer = styled.div`
 `;
 
 const SignUpContainer = styled.section`
-  width: 48.5%;
+  width: 60%;
   height: 500px;
   background: #fff;
   @media (max-width: 955px) {
@@ -177,7 +199,6 @@ const CheapCard = styled.img`
 `;
 
 const Home = () => {
-  console.log(window.innerWidth);
   return (
     <>
       <SearchContainer>
@@ -187,16 +208,16 @@ const Home = () => {
         <CardsContentContainer>
           <FormContainer>
             <form>
-              {/* <label for="cardName">Search Card</label> */}
               <StyledFormInput
                 type="text"
+                autoFocus
                 style={{
                   fontSize: `2.5rem`,
                   fontStyle: `italic`,
                   width: `100%`,
                   margin: `15px 0`
                 }}
-                placeholder="cyclonic rift..."
+                placeholder="time spiral..."
               />
               <button
                 style={{
@@ -236,19 +257,39 @@ const Home = () => {
           <h2>
             Recent <span style={{ color: `#00CC7B` }}>budget</span> alternates
           </h2>
+          <ul>
+            <li>
+              <a>Time Spiral <span style={{color: `tomato`}} >&#36;63</span></a>
+              <span>&rarr;</span>
+              <a>Time Reversal <span>&#36;3</span></a>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+            <li>
+            </li>
+          </ul>
+          <div style={{width: `90%`, margin: `0 auto`, height: `80px`, display: `flex`, justifyContent: `flex-start`, alignItems: `center`}}>
+            <a style={{color: `#00cc7b`}}>View All</a>
+          </div>
         </RecentCards>
         <SignUpContainer>
           <h2>
             <span style={{ color: `#00CC7B` }}>Sign up</span> to contribute
           </h2>
           <form style={{ padding: `22px` }}>
-            <label for="email">Email</label>
+            <label htmlFor="email">Email</label>
             <StyledFormInput name="email" type="email" />
-            <label for="confirmEmail">Confirm Email</label>
-            <StyledFormInput name="confirmEmail" type="email" />
-            <label for="password">Password</label>
+            <label htmlFor="username">Username</label>
+            <StyledFormInput name="username" type="text" />
+            <label htmlFor="password">Password</label>
             <StyledFormInput name="password" type="password" />
-            <label for="confirmPassword">Confirm Password</label>
+            <label htmlFor="confirmPassword">Confirm Password</label>
             <StyledFormInput name="confirmPassword" type="password" />
             <button
               style={{

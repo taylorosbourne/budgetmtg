@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const StyledFooter = styled.footer`
@@ -32,8 +33,8 @@ const FooterNav = styled.div`
 const Footer = () => (
   <StyledFooter>
     <FooterNav>
-      <a>Home</a>
-      <a>About</a>
+      <Link to="/">Home</Link>
+      <Link to="/about">About</Link>
       <a>Donate</a>
     </FooterNav>
     <div style={{width: `50%`, minWidth: `400px`, fontSize: `14px`, lineHeight: `1.5`, fontFamily: `'Raleway', sans-serif`, color: `rgb(142,142,142)`}}>
