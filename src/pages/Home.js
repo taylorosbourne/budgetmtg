@@ -88,12 +88,16 @@ const RecentCards = styled.section`
       align-items: center;
       margin: 5px auto;
       border-bottom: 1px solid rgb(242,242,242);
+      * {
+        width: 33%;
+        overflow: hidden;
+      }
       a {
-        font-size: 1.25rem;
+        font-size: 0.95rem;
       }
       span {
-        font-size: 1.25rem;
         color: #00cc7b;
+        font-size: 1rem;
       }
     }
   }
@@ -259,11 +263,14 @@ const Home = () => {
           </h2>
           <ul>
             <li>
-              <a>Time Spiral <span style={{color: `tomato`}} >&#36;63</span></a>
-              <span>&rarr;</span>
-              <a>Time Reversal <span>&#36;3</span></a>
+              <a><span style={{color: `tomato`}} >&#36;63</span> Time Spiral</a>
+              <span style={{textAlign: `center`}}>&rarr;</span>
+              <a style={{textAlign: `right`}}>Time Reversal <span>&#36;3</span></a>
             </li>
             <li>
+              <a><span style={{color: `#f7df1e`}} >&#36;10</span> Steelshaper's Gift</a>
+              <span style={{textAlign: `center`}}>&rarr;</span>
+              <a style={{textAlign: `right`}}>Open the Armory <span>&#36;2</span></a>
             </li>
             <li>
             </li>
