@@ -7,6 +7,7 @@ const AboutSection = styled.section`
   padding: 30px 4vw 21px;
   background: #fff;
   margin: 0 auto;
+  border-radius: 15px;
   h2 {
     font-weight: 200;
     text-transform: uppercase;

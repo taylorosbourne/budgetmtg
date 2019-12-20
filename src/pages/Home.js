@@ -22,6 +22,7 @@ const SearchContainer = styled.section`
   height: 500px;
   min-height: 500px;
   margin: 0px auto 35px;
+  border-radius: 15px;
   h2 {
     max-width: 100%;
     height: 20px;
@@ -64,6 +65,7 @@ const RecentCards = styled.section`
   width: 38%;
   height: 550px;
   background: #fff;
+  border-radius: 15px;
   h2 {
     max-width: 100%;
     height: 20px;
@@ -117,6 +119,7 @@ const SignUpContainer = styled.section`
   width: 60%;
   height: 500px;
   background: #fff;
+  border-radius: 15px;
   @media (max-width: 955px) {
     width: 100%;
     height: 550px;
@@ -231,7 +234,8 @@ const Home = () => {
                   color: `#00CC7B`,
                   padding: `10px 20px`,
                   border: `1px solid #00CC7B`,
-                  cursor: `pointer`
+                  cursor: `pointer`,
+                  borderRadius: `5px`
                 }}
               >
                 Search
@@ -306,7 +310,8 @@ const Home = () => {
                 color: `#fff`,
                 padding: `10px 20px`,
                 border: 0,
-                cursor: `pointer`
+                cursor: `pointer`,
+                borderRadius: `5px`
               }}
             >
               Sign Up
